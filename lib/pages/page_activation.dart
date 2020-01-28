@@ -6,8 +6,17 @@ class ActivationPage extends StatelessWidget {
     final instruction = Padding(
       padding: EdgeInsets.all(20.0),
       child: Text(
-        'To complete your phone number verification, please enter 6-digit activation code.',
+        'To complete your phone number verification, please enter username and 10-digit activation code.',
         style: TextStyle(fontSize: 16.0),
+      ),
+    );
+
+    final username = ListTile(
+      leading: const Icon(Icons.people),
+      title: new TextField(
+        decoration: new InputDecoration(
+          hintText: "Username",
+        ),
       ),
     );
 
@@ -27,6 +36,7 @@ class ActivationPage extends StatelessWidget {
           child: new Column(
             children: <Widget>[
               instruction,
+              username,
               token,
             ],
           ),
